@@ -13,9 +13,9 @@ import {
 //   "a a c" ;
 // `;
 const CodeContainer=styled(LiveProvider)`
-    width:75%;
+    width:100%;
     display:flex;
-    margin:15px 20px 15px 265px;
+    margin:15px auto;
     background-color:'#e9ecef';
     box-shadow: rgba(20, 20, 20, 0.27) 0.0555556rem 0.0555556rem 1.11111rem;
     border-radius:4px;
@@ -33,6 +33,7 @@ const   Code=styled(LiveEditor)`
   
 const  Preview=styled(LivePreview)`
        flex:1;
+       display:inline-block;
        
       background-color:papayawhip;
       border:1px solid rgba(222,222,222,.2);

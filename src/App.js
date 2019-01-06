@@ -1,36 +1,36 @@
-import React, { Component } from 'react'
+import React, { Component ,useState} from 'react'
 import {CodeEditor} from './Component/CodeEditor';
 import {codes} from './Code/code';
 import * as R from 'ramda';
 import styled from 'styled-components';
 import { Provider,Block,Box } from "reakit";
 import theme from "reakit-theme-default";
-import  {SearchBar} from "./Component/sideBar";
-import {MainNav} from './Component/NavBar';
-import  {ramdaCategory} from './Code/ramda_category'
+import { TitleBar, Toolbar} from 'react-desktop/macOs';
 const scope={R,styled}
-export default class App extends Component {
-  render() {
+const App=()=>{
+    //const [size,setSize]=useState("");
     return (
       <Provider theme={theme}>
       <Box>
-      <Block>
-        <MainNav/>
-      </Block>
-      
-      <Block>
-         <SearchBar content={ramdaCategory.catetory}/>
-      </Block>
-      <Block color="red">
-      
-      
-       {  codes.map((code,i)=>(
-              <CodeEditor code={code.code} scope={scope} ></CodeEditor>
+      <Block  style={{border:'1px solid rgba(177, 224, 210, 0.1)',background:"rgba(243, 243, 243, 1.000)", width:"95%",margin:'10px auto',borderRadius:'5px'}}>
+         {/* <TitleBar controls inset 
+         onCloseClick={() => window.close()}
+         onMinimizeClick={() => console.log('Minimize window')}    
+         >
+            <Toolbar height="35" horizontalAlignment="center"
+              
+            />
+         </TitleBar> */}
+         
+      {  codes.map((code,i)=>(
+           <CodeEditor code={code.code} scope={scope} />
           )) 
         }
         </Block>
        </Box>
       </Provider>
     )
+  
   }
-}
+
+export default App;
